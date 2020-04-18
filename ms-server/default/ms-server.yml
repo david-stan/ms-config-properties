@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/bsiep?serverTimezone=CET&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    username: root
+    password: root
+  kafka:
+    boorstrap-servers: localhost:9092
+    topic:
+      certSignReq: CERT_SIGN_REQ
