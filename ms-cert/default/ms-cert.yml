@@ -1,0 +1,5 @@
+spring:
+  kafka:
+    boorstrap-servers: localhost:9092
+    topic:
+      certSignReq: CERT_SIGN_REQ
