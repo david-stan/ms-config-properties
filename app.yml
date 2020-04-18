@@ -1,0 +1,9 @@
+eureka:
+  client:
+    eureka-server-u-r-l-context: http//localhost:8761/eureka
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+application:
+  welcome:
+    message: This is an example.
