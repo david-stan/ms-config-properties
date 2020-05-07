@@ -4,3 +4,48 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${REGISTRY_HOST:localhost}:8061/eureka/
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/bsiep?serverTimezone=CET&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    username: root
+    password: root
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+logging:
+  level:
+    web: debug
+
+keycloak:
+  enabled: true
+  realm: defencefirst
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  resource: pki
+  bearer-only: true
+  cors: true
+  credentials:
+    secret: 9ce49bbf-0db3-4b1a-ae79-06eb5fb53350
+
+server:
+  servlet:
+    context-path: /api
+
+keystore:
+  filename: keystore
+  password: p@ssw0rd
+
+spring:
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
