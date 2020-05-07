@@ -1,5 +1,7 @@
 server:
   port: 9091
+  servlet:
+    context-path: /api
 eureka:
   client:
     serviceUrl:
@@ -18,6 +20,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
 
 logging:
   level:
@@ -32,17 +37,9 @@ keycloak:
   bearer-only: true
   cors: true
   credentials:
-    secret: 9ce49bbf-0db3-4b1a-ae79-06eb5fb53350
-
-server:
-  servlet:
-    context-path: /api
+    secret: 9ce49bbf-0db3-4b1a-ae79-06eb5fb53350  
 
 keystore:
   filename: keystore
   password: p@ssw0rd
-
-spring:
-  jackson:
-    serialization:
-      FAIL_ON_EMPTY_BEANS: false
+  
