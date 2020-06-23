@@ -6,3 +6,20 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${REGISTRY_HOST:localhost}:8061/eureka/
+
+logging:
+  level:
+    web: debug
+
+keycloak:
+  enabled: true
+  realm: defencefirst
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  resource: siem
+  bearer-only: true
+  cors: true
+  credentials:
+    secret: b634c70a-0187-45cc-83f1-231c4eca48a7
+
+  
